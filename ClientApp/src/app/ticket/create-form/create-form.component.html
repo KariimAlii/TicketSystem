@@ -1,0 +1,48 @@
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" formControlName="phoneNumber" />
+    <div *ngIf="ticketForm.get('phoneNumber')?.hasError('required')" class="text-danger">Phone Number is required</div>
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <select id="status" formControlName="status">
+      <option value="Handled">Handled</option>
+      <option value="UnHandled">UnHandled</option>
+    </select>
+    <div *ngIf="ticketForm.get('status')?.hasError('required')" class="text-danger">Status is required</div>
+  </div>
+
+  <div>
+    <label for="governorateId">Governorate:</label>
+    <select id="governorateId" formControlName="governorateId">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <div *ngIf="ticketForm.get('governorateId')?.hasError('required')" class="text-danger">Governorate is required</div>
+  </div>
+
+  <div>
+    <label for="districtId">District:</label>
+    <select id="districtId" formControlName="districtId">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <div *ngIf="ticketForm.get('districtId')?.hasError('required')" class="text-danger">District is required</div>
+  </div>
+
+  <div>
+    <label for="cityId">City:</label>
+    <select id="cityId" formControlName="cityId">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <div *ngIf="ticketForm.get('cityId')?.hasError('required')" class="text-danger">City is required</div>
+  </div>
+
+  <button type="submit" [disabled]="!ticketForm.valid">Submit</button>
+</form>
