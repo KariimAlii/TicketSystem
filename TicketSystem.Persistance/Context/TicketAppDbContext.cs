@@ -39,7 +39,7 @@ namespace TicketSystem.Persistance.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlite("Data Source=TicketSystemDB.db");
+                optionsBuilder.UseSqlServer("Server = KARIM-ALI\\MSSQLSERVER01; Database = Ticket_System; Integrated Security = True; TrustServerCertificate = True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

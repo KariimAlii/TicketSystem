@@ -26,7 +26,7 @@ namespace TicketSystem.Persistance.DependencyInjection
             services.AddDbContext<TicketAppDbContext>(optionsBuilder =>
             {
                 string LocalConnectionString = configuration.GetConnectionString("LocalConnectionString");
-                optionsBuilder.UseSqlite(LocalConnectionString);
+                optionsBuilder.UseSqlServer(LocalConnectionString);
             });
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
